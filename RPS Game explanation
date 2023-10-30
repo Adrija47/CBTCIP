@@ -1,1 +1,40 @@
+This code is a Python script that implements a simple text-based Rock-Paper-Scissors game for a player to play against the computer. Here's a breakdown of how the code works:
 
+1. Import necessary modules:
+   - `random`: This module is used to generate a random choice for the computer.
+   - `getpass` from the `getpass` module: This is used to securely input the player's choice without displaying it on the screen.
+
+2. Define a function `player_turn()`:
+   - This function is responsible for taking the player's input.
+   - It uses `getpass` to hide the input and asks the player to enter their choice as "ROCK," "PAPER," or "SCISSOR."
+   - It validates the player's input to ensure it's one of the allowed choices. If the input is not valid, it prompts the player to try again.
+   - The function returns the player's choice in lowercase.
+
+3. Define a function `computer_turn()`:
+   - This function is responsible for generating a random choice for the computer.
+   - It defines a list of choices (rock, paper, scissor) and randomly selects one.
+   - The selected choice is returned in lowercase.
+
+4. Define a function `winning_conditions(playerchoice, computerchoice)`:
+   - This function determines the winner of a round based on the player's and computer's choices.
+   - If both the player and computer make the same choice, it's a tie.
+   - If the player wins (e.g., player's choice beats the computer's choice), it returns "The Player Wins."
+   - If the computer wins, it returns "The Computer Wins."
+
+5. Define the main game loop in the function `run_game()`:
+   - Initialize variables to keep track of the number of rounds played, the player's score (`ps`), and the computer's score (`cs`).
+   - The game is played in an infinite loop until the player decides not to play again.
+   - In each round, it calls `player_turn()` to get the player's choice and `computer_turn()` to get the computer's choice.
+   - It prints the choices made by both the player and the computer.
+   - It determines the winner of the round using `winning_conditions()`, updates the scores, and displays them.
+   - It asks the player if they want to play another round. If the answer is not "yes," the loop breaks.
+
+6. After exiting the game loop, it prints the overall results:
+   - Total rounds played, overall winner (if any), and scores.
+   - If the player's score is higher, it declares the player as the overall winner. If the computer's score is higher, it declares the computer as the overall winner. If the scores are tied, it announces a tie.
+
+7. The code execution starts when `if __name__ == "__main__":` is true:
+   - It prints a welcome message and instructions for the game.
+   - Calls the `run_game()` function to start the game.
+
+The game continues until the player decides not to play further. It provides feedback on the results of each round and the overall outcome of the game.
